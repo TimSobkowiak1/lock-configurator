@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Locking System Configurator</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .configurator-container { max-width: 600px; margin: auto; }
+    .action-panel { margin-bottom: 20px; }
+    .cylinder-list { border: 1px solid #ccc; padding: 10px; border-radius: 5px; }
+    .cylinder-item { margin: 10px 0; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+    .cylinder-item span { display: block; margin: 5px 0; }
+    .button { padding: 8px 12px; margin: 5px; border: none; background-color: #007BFF; color: white; border-radius: 5px; cursor: pointer; }
+    .button:disabled { background-color: #ccc; cursor: not-allowed; }
+  </style>
+</head>
+<body>
+  <div class="configurator-container">
+    <h1>Locking System Configurator</h1>
+    <div class="action-panel">
+      <button id="clearConfig" class="button">Clear Configuration</button>
+      <button id="saveConfig" class="button" disabled>Save Configuration</button>
+    </div>
+    <div>
+      <h3>Add New Cylinder</h3>
+      <label>
+        Name:
+        <input type="text" id="cylinderName" placeholder="e.g., Front Door">
+      </label><br><br>
+      <label>
+        Length (mm):
+        <input type="text" id="cylinderLength" placeholder="e.g., 30/30">
+      </label><br><br>
+      <label>
+        Color:
+        <input type="text" id="cylinderColor" placeholder="e.g., Silver">
+      </label><br><br>
+      <label>
+        Security Level:
+        <input type="text" id="securityLevel" placeholder="e.g., Basic">
+      </label><br><br>
+      <button id="addCylinder" class="button">Add Cylinder</button>
+    </div>
+    <div class="cylinder-list" id="cylinderList">
+      <h3>Configured Cylinders</h3>
+      <p id="emptyMessage">No cylinders added yet.</p>
+    </div>
+  </div>
+
+  <script src="configurator.js"></script>
+</body>
+</html>
